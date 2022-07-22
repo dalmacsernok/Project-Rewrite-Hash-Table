@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Codecool.HashTable</name>
+    </assembly>
+    <members>
+        <member name="T:Codecool.HashTable.Entry`2">
+            <summary>
+            Basic hash table entry node
+            </summary>
+            <typeparam name="TKey">Type of key</typeparam>
+            <typeparam name="TValue">Type of value</typeparam>
+        </member>
+        <member name="M:Codecool.HashTable.Entry`2.#ctor(`0,`1)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Codecool.HashTable.Entry`2"/> class.
+            </summary>
+            <param name="key">Key</param>
+            <param name="value">Value</param>
+        </member>
+        <member name="P:Codecool.HashTable.Entry`2.Key">
+            <summary>
+            Gets or sets the Key of entry.
+            </summary>
+        </member>
+        <member name="P:Codecool.HashTable.Entry`2.Value">
+            <summary>
+            Gets or sets the Value of entry.
+            </summary>
+        </member>
+        <member name="T:Codecool.HashTable.HashTable`2">
+            <summary>
+            Collection for storing KeyValue pairs.
+            </summary>
+            <typeparam name="TKey">Type of key</typeparam>
+            <typeparam name="TValue">Type of value</typeparam>
+        </member>
+        <member name="F:Codecool.HashTable.HashTable`2._bucketSize">
+            <summary>
+            Number of buckets - DO NOT MODIFY!
+            </summary>
+        </member>
+        <member name="F:Codecool.HashTable.HashTable`2._comparer">
+            <summary>
+            It is used to avoid NullReferenceException when comparing keys.
+            </summary>
+        </member>
+        <member name="F:Codecool.HashTable.HashTable`2._buckets">
+            <summary>
+            This holds all the data. Its a primitive array where every element is a <see cref="T:System.Collections.Generic.LinkedList`1"/>.
+            The list holds elements of type <see cref="T:Codecool.HashTable.Entry`2"/>.
+            </summary>
+        </member>
+        <member name="M:Codecool.HashTable.HashTable`2.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Codecool.HashTable.HashTable`2"/> class.
+            </summary>
+        </member>
+        <member name="P:Codecool.HashTable.HashTable`2.Item(`0)">
+            <summary>
+            Gets or sets a new value for a given key in the hashtable.
+            by allowing the client code to use [] notation.
+            </summary>
+            <param name="key">Index of new element</param>
+            <returns>Value belongs to the entry with the given index.</returns>
+        </member>
+        <member name="M:Codecool.HashTable.HashTable`2.Clear">
+            <summary>
+            Delete all entry from hash table.
+            </summary>
+        </member>
+        <member name="M:Codecool.HashTable.HashTable`2.Remove(`0)">
+            <summary>
+            Remove the entry belongs to the given key.
+            If key not found, throw an <see cref="T:System.Collections.Generic.KeyNotFoundException"/>.
+            </summary>
+            <param name="key">Key to be removed</param>
+            <returns>Value of removed entry</returns>
+        </member>
+        <member name="M:Codecool.HashTable.HashTable`2.GetBucketIndexForKey(`0)">
+            <summary>
+            This function converts somehow the key to an integer between 0 and bucketSize
+            </summary>
+            <param name="key">Key to find hashcode for.</param>
+            <returns>Hashcode converted to int.</returns>
+        </member>
+        <member name="T:Codecool.HashTable.Program">
+            <summary>
+            This is the main class of your program which contains Main method
+            </summary>
+        </member>
+        <member name="M:Codecool.HashTable.Program.Main(System.String[])">
+            <summary>
+            This is the entry point of your program.
+            </summary>
+            <param name="args">Command line arguments.</param>
+        </member>
+    </members>
+</doc>
